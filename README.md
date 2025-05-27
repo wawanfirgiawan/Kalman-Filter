@@ -39,10 +39,6 @@ Setelah YOLO mendeteksi lagi di frame ke-7, Kalman akan **menyesuaikan (update)*
 
 ---
 
-Bagus! Sekarang kita bahas:
-
----
-
 ### **2. Bagaimana Cara Kerja Kalman Filter?**
 
 #### 📌 **Inti Utama**:
@@ -196,27 +192,6 @@ Kalman Filter menggunakan **matriks-matriks** untuk menghitung prediksi dan upda
 | `H`    | Observation matrix           | Menghubungkan hasil deteksi YOLO ke vektor state (`x`)                                         |
 | `R`    | Observation noise covariance | Error dalam pengukuran (misalnya, YOLO mendeteksi kurang tepat)                                |
 | `z`    | Observation vector           | Data hasil deteksi YOLO: `[pos_x, pos_y]`                                                      |
-
----
-
-### 🔁 Langkah Komputasi:
-
-#### 1. **Prediksi**:
-
-```python
-x = F @ x      # prediksi posisi baru
-P = F @ P @ F.T + Q  # prediksi ketidakpastian
-```
-
-#### 2. **Update (Jika ada observasi baru)**:
-
-```python
-y = z - H @ x             # error antara deteksi dan prediksi
-S = H @ P @ H.T + R       # ketidakpastian gabungan
-K = P @ H.T @ np.linalg.inv(S)  # Kalman Gain
-x = x + K @ y             # update posisi
-P = (I - K @ H) @ P       # update ketidakpastian
-```
 
 ---
 
