@@ -1,5 +1,4 @@
-> `Beberapa Pertanyaan tentang Implemntasi Kalman Filter pada Yolo pada tracking atau counting kendaraan*
-
+# `Beberapa Pertanyaan tentang Implemntasi Kalman Filter pada Yolo pada tracking atau counting kendaraan`
 ### **1. Apa Fungsi dari Kalman Filter?**
 
 #### ✅ **Jawaban Singkat**:
